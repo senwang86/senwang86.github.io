@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="In the project, we need a SSL socket communication between Android and a Java server.Here is some summaries,
+
+Basics of SSL protocolSSL 1.0, never pub"/>
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Sen Wang"/>
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Android SSL Socket Communication"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="In the project, we need a SSL socket communication between Android and a Java server.Here is some summaries,
+
+Basics of SSL protocolSSL 1.0, never pub"/>
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="The Walden"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article"/>
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="http://www.senwang.meimg/home-bg.jpg"/>
+    
+
+        <meta name="twitter:card" content="summary_large_image"/>
+
+    
+
+    
+        <meta name="twitter:image" content="http://www.senwang.meimg/home-bg.jpg"/>
+    
+
+    <!-- Title -->
+    
+    <title>Android SSL Socket Communication - The Walden</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet"/>
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">The Walden</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="https://github.com/senwang86">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Android SSL Socket Communication</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2016-02-02
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>In the project, we need a SSL socket communication between Android and a Java server.<br>Here is some summaries,</p>
+<ol>
+<li>Basics of SSL protocol<br>SSL 1.0, never publicly released<br>SSL 2.0, 1995, deprecated in 2011<br>SSL 3.0, 1996, deprecated in June 2015<br>TLS 1.0, January, 1999, <strong>an upgrade of SSL 3.0</strong><br>TLS 1.1, April, 2006<br>TLS 1.2, August 2008<br>TLS 1.3, still draft in today, Feb 2,2016.</li>
+</ol>
+<p>The handshake between Client and Server works as follow:</p>
+<ol>
+<li>Client sends message <strong>ClientHello</strong>, initialize connection request.</li>
+<li>Server sends message <strong>ServerHello</strong>, answer request.</li>
+<li>Server exchange <strong>ServerKey</strong>, sends the public key.</li>
+<li>Server <strong>HelloDone</strong>.</li>
+<li>Client exchange <strong>ClientKey</strong>, creates a session private key using Server’s public key, sends the private key to Server.</li>
+<li>Client change <strong>CipherSpec</strong>, informs Server to change the encryption algorithm.</li>
+<li>Client finish.</li>
+<li>Server change <strong>CipherSpec</strong>, confirms that the encryption algorithm changed.</li>
+<li>Server finish.</li>
+</ol>
+<p>In the protocol above, only Client needs to verify the Server’s certificate, Server doesn’t need to verify the certificate of the Client, which is called <strong>One Way Handshake</strong>.</p>
+<p>Next, we create the self-signed certificate, we use the <strong>keytool</strong> provided by Java, <strong>OpenSSL</strong> can also do this. </p>
+<p>We have the following things to do:</p>
+<ol>
+<li>Create self-signed certificate on the server side.</li>
+<li>Create client side(<strong>Android</strong>) keystore (BKS)</li>
+<li>Export the certificate from the server.</li>
+<li>Import the certificate to the Android.</li>
+</ol>
+<p>Note, <strong>One Way Handshake</strong> means only Client need to verify Server’s certificate. </p>
+<ol>
+<li><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">keytool -genkey -v -<span class="built_in">alias</span> serverKey -keyalg RSA -keystore ./server.ks -storetype JKS -storepass server -keypass 1234</span><br></pre></td></tr></table></figure>
+</li>
+<li><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">keytool -genkey -<span class="built_in">alias</span> androidKey -keyalg RSA -keystore ./client.bks -storetype BKS -providerclass org.bouncycastle.jce.provider.BouncyCastleProvider -providerpath /path/to/jar/bcprov-jdk16-1.53.jar -storepass client -keypass 4321</span><br></pre></td></tr></table></figure>
+<p>Note, Android KeyStore use the BouncyCastle(<strong>BKS</strong>) format, which is different from the Jave platform(<strong>JKS</strong>), that’s why we indicate the <strong>-providerclass</strong> and <strong>-providerpath</strong>, and google for the latest <strong>.jar</strong>.</p>
+</li>
+<li><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">keytool -<span class="built_in">export</span> -<span class="built_in">alias</span> serverKey -keystore ./server_ks -file serverKey.cer -providerclass org.bouncycastle.jce.provider.BouncyCastleProvider -providerpath /path/to/jar/bcprov-jdk16-1.53.jar </span><br></pre></td></tr></table></figure>
+<p>Well, in case, we just indicate the <strong>-providerclass</strong> and <strong>-providerpath</strong> again. And the terminal may require the passcode of the keystore, use <strong>-storepass server</strong> in the first step. </p>
+</li>
+<li><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">keytool -import -<span class="built_in">alias</span> serverKey -file serverKey.cer -keystore ./client.bks -storetype BKS -provider org.bouncycastle.jce.provider.BouncyCastleProvider -providerpath /path/to/jar/bcprov-jdk16-1.53.jar</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>Till here, we have done the preparation, next we need to programm it on the Android side and server side respectively.<br>In Android, there are two keystores, the one in the Android itself, the other one with the self-signed certificate, which we need to load into our App.<br>I first create a <code>KeyStore</code> instance and initialize the keystore with the self-signed certificate, <code>store.load(truststoreFile, &quot;314durham&quot;.toCharArray());</code>.<br>Next, I initialize the <code>TrustManagerFactory</code> using the KeyStore that sjust loaded.<br>Then, I create <code>SSLContext</code> and initialize it using the local KeyStore and the <code>TrustManagerFactory</code>. <code>context.init(keyManager.getKeyManagers(), tmf.getTrustManagers(), new SecureRandom());</code>.<br>From Oracle API document,</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title function_">init</span><span class="params">(KeyManager[] km,</span></span><br><span class="line"><span class="params">        TrustManager[] tm,</span></span><br><span class="line"><span class="params">        SecureRandom random)</span></span><br><span class="line">                <span class="keyword">throws</span> KeyManagementException</span><br><span class="line">				</span><br><span class="line">Parameters:</span><br><span class="line">km - the sources of authentication keys or <span class="literal">null</span></span><br><span class="line">tm - the sources of peer authentication trust decisions or <span class="literal">null</span></span><br><span class="line">random - the source of randomness <span class="keyword">for</span> <span class="built_in">this</span> generator or <span class="literal">null</span></span><br></pre></td></tr></table></figure>
+<p>In Android 4.4 and 5.0, <code>context.init(null, tmf.getTrustManagers(), new SecureRandom());</code> works, but in Android 6.0, the first parameter can’t be <code>null</code>, or there will be some <code>SSL Handshake</code> exceptions.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> SSLSocket <span class="title function_">getSSLSocket</span><span class="params">(String ipAddr, <span class="type">int</span> portNum, String keystorePath, <span class="type">boolean</span> allowAllHosts)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">//The KeyStore with the self-signed certificate.</span></span><br><span class="line">   <span class="type">InputStream</span> <span class="variable">truststoreFile</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileInputStream</span>(keystorePath);</span><br><span class="line">   <span class="type">KeyStore</span> <span class="variable">store</span> <span class="operator">=</span> KeyStore.getInstance(KeyStore.getDefaultType());</span><br><span class="line">   store.load(truststoreFile, <span class="string">&quot;4321&quot;</span>.toCharArray());</span><br><span class="line"></span><br><span class="line"><span class="comment">//The KeyManagerFactory that supposed to load the Android local //keystore, but here we just use the same keystore that has the //self-signed certificate.</span></span><br><span class="line">   <span class="type">KeyManagerFactory</span> <span class="variable">keyManager</span> <span class="operator">=</span> KeyManagerFactory.getInstance(<span class="string">&quot;X509&quot;</span>);  </span><br><span class="line">   keyManager.init(store,<span class="string">&quot;4321&quot;</span>.toCharArray());  </span><br><span class="line"></span><br><span class="line"><span class="comment">//The TrustManagerFactory loads the keystore with the //self-signed certificate.</span></span><br><span class="line">   <span class="type">TrustManagerFactory</span> <span class="variable">tmf</span> <span class="operator">=</span> TrustManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());</span><br><span class="line">   tmf.init(store);</span><br><span class="line"></span><br><span class="line"><span class="comment">//Create an instance of SSLContext. </span></span><br><span class="line">   <span class="type">SSLContext</span> <span class="variable">context</span> <span class="operator">=</span> SSLContext.getInstance(<span class="string">&quot;TLS&quot;</span>);</span><br><span class="line">   context.init(keyManager.getKeyManagers(), tmf.getTrustManagers(), <span class="keyword">new</span> <span class="title class_">SecureRandom</span>());</span><br><span class="line"></span><br><span class="line">   <span class="comment">//Create the Socket using SSLContext.</span></span><br><span class="line">   <span class="type">Socket</span> <span class="variable">socket</span> <span class="operator">=</span> (SSLSocket)context.getSocketFactory().createSocket(ipAddr, portNum);</span><br><span class="line"></span><br><span class="line">   <span class="keyword">return</span> (SSLSocket) socket;</span><br><span class="line"></span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+                        <li>
+                            <a href="https://www.facebook.com/swang6891" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/senwang86" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                        <li>
+                            <a href="https://www.linkedin.com/in/sen-wang-283aa437/" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2023 Sen Wang<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
