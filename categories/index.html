@@ -13,11 +13,6 @@
     
 
     
-        <meta name="description" content="To setup the Apache and PHP on OS X El Captain, thanks to this artile of Ole Michelsen
-In terminal,
-1httpd -v
-It would display the installed version o"/>
-    
 
     <!--Author-->
     
@@ -26,15 +21,10 @@ It would display the installed version o"/>
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Mac OS X Apache and PHP Setup"/>
+        <meta property="og:title" content="categories"/>
     
 
     <!--Open Graph Description-->
-    
-        <meta property="og:description" content="To setup the Apache and PHP on OS X El Captain, thanks to this artile of Ole Michelsen
-In terminal,
-1httpd -v
-It would display the installed version o"/>
     
 
     <!--Open Graph Site Name-->
@@ -61,7 +51,7 @@ It would display the installed version o"/>
 
     <!-- Title -->
     
-    <title>Mac OS X Apache and PHP Setup - The Walden</title>
+    <title>categories - The Walden</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -165,7 +155,11 @@ It would display the installed version o"/>
 </nav>
 
     <!-- Main Content -->
-    <!-- Page Header -->
+    
+
+
+    <section class="main">
+        <!-- Page Header -->
 <!-- Set your background image for this header in your post front-matter: cover -->
 
 <header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
@@ -173,13 +167,13 @@ It would display the installed version o"/>
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1>Mac OS X Apache and PHP Setup</h1>
+                    <h1>categories</h1>
                     
                     <span class="meta">
                         <!-- Date and Author -->
                         
                         
-                            2016-02-01
+                            2023-03-15
                         
                     </span>
                 </div>
@@ -201,44 +195,7 @@ It would display the installed version o"/>
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <p>To setup the Apache and PHP on OS X El Captain, thanks to this artile of <a target="_blank" rel="noopener" href="https://ole.michelsen.dk/blog/setup-local-web-server-apache-php-osx-yosemite.html">Ole Michelsen</a></p>
-<p>In terminal,</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">httpd -v</span><br></pre></td></tr></table></figure>
-<p>It would display the installed version of Apache, to start Apache</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apachectl start</span><br></pre></td></tr></table></figure>
-<p>Open <code>http://localhost</code> in a browser, if everything works, a webpage<br>with text “It works” would display.</p>
-<p>Next, create a <code>Sites</code> folder under the user folder, </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> ~/Sites</span><br></pre></td></tr></table></figure>
-<p>We need to create a new user config for Apache(The user config is actually already created when I go to the folder <code>/etc/apache2/users/</code>),</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/apache2/users/Watson.config</span><br></pre></td></tr></table></figure>
-<p>Paste the following config or modify the existed ones in the <code>Watson.config</code>(I didn’t dig into what these configs are used for),</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;Directory <span class="string">&quot;/Users/*/Sites/&quot;</span>&gt;</span><br><span class="line">  Options Indexes MultiViews FollowSymLinks</span><br><span class="line">  AllowOverride All</span><br><span class="line">  Require all granted</span><br><span class="line">&lt;/Directory&gt;</span><br></pre></td></tr></table></figure>
-<p>Next, to enable the Apache using our own user directory to serve files, modify the <code>httpd.conf</code> file.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/apache2/httpd.conf</span><br></pre></td></tr></table></figure>
-<p>In vim, press <code>/</code> for searching and search for “userdir”, uncomment the following lines(remove the leading#),</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">LoadModule userdir_module libexec/apache2/mod_userdir.so</span><br><span class="line">LoadModule alias_module libexec/apache2/mod_alias.so</span><br><span class="line">LoadModule rewrite_module libexec/apache2/mod_rewrite.so</span><br><span class="line">LoadModule php5_module libexec/apache2/libphp5.so</span><br></pre></td></tr></table></figure>
-<p>And one more line to uncomment,</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Include /private/etc/apache2/extra/httpd-userdir.conf</span><br></pre></td></tr></table></figure>
-
-<p>Note, from another post on <a target="_blank" rel="noopener" href="http://stackoverflow.com/questions/8035939/write-privileges-localhost-mac-osx">Stackoverflow</a><br>There is one more config in <code>httpd.conf</code>,<br>Change </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">User _www</span><br><span class="line">Group _www</span><br></pre></td></tr></table></figure>
-<p>To</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">User Watson</span><br><span class="line">Group staff</span><br></pre></td></tr></table></figure>
-
-<p>Next, modify the <code>httpd-userdir.conf</code> file,</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/apache2/extra/httpd-userdir.conf </span><br></pre></td></tr></table></figure>
-<p>Uncomment the following line, then save the file.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Include /private/etc/apache2/users/*.conf</span><br></pre></td></tr></table></figure>
-
-<p>Next, restart Apache,</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apachectl restart</span><br></pre></td></tr></table></figure>
-<p>To test that PHP is working, create a PHP test file in your new user level web root (~&#x2F;Sites),</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span> <span class="string">&quot;&lt;?php phpinfo(); ?&gt;&quot;</span> &gt; ~/Sites/phpinfo.php</span><br></pre></td></tr></table></figure>
-<p>Open the <code>http://localhost/~Watson/phpinfo.php</code> in a browser to see if the configuration works.<br>If you want Apache to start up automatically after a restart, run the following command in the Terminal,</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo launchctl load -w /System/Library/LaunchDaemons/org.apache.httpd.plist</span><br></pre></td></tr></table></figure>
-
-<p>The reason I install Apache and PHP is that I want a script to upload some images from a Java server. In the installation, the php code has some “write privileges” issue, then I found the solution from the stackoverflow.</p>
-
+                
 
                 
             </div>
@@ -254,6 +211,12 @@ It would display the installed version o"/>
         </div>
     </div>
 </article>
+    </section>
+
+
+
+
+
 
     <!-- Footer -->
     <hr />
