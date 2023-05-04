@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="Some Graph Algorithms and Theories
+Graph cheatsheet for coding interviews
+
+How to determine a undirected graph is a valid tree
+
+It must be connected a"/>
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Sen Wang"/>
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Graph"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="Some Graph Algorithms and Theories
+Graph cheatsheet for coding interviews
+
+How to determine a undirected graph is a valid tree
+
+It must be connected a"/>
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="The Walden"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article"/>
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="http://www.senwang.meimg/lake_tahoe_2023_unsplash.jpg"/>
+    
+
+        <meta name="twitter:card" content="summary_large_image"/>
+
+    
+
+    
+        <meta name="twitter:image" content="http://www.senwang.meimg/lake_tahoe_2023_unsplash.jpg"/>
+    
+
+    <!-- Title -->
+    
+    <title>Graph - The Walden</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet"/>
+
+    <!-- Google Analytics -->
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'G-PN9Y5ELMMM', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+
+
+    <!-- favicon -->
+    
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">The Walden</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="https://github.com/senwang86">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/img/lake_tahoe_2023_unsplash.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Graph</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2023-04-19
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/python/">#python</a>
+
+
+                    
+                </div>
+                <div class="col-lg-5 col-md-5 post-categories">
+                    
+                        
+
+<a href="/categories/Data-Structure-Algorithm/">Data Structure & Algorithm</a>
+
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
+                <h2 id="Some-Graph-Algorithms-and-Theories"><a href="#Some-Graph-Algorithms-and-Theories" class="headerlink" title="Some Graph Algorithms and Theories"></a>Some Graph Algorithms and Theories</h2><ul>
+<li><p><a target="_blank" rel="noopener" href="https://www.techinterviewhandbook.org/algorithms/graph/">Graph cheatsheet for coding interviews</a></p>
+</li>
+<li><p><strong>How to determine a undirected graph is a valid tree</strong></p>
+<ul>
+<li>It must be connected and have exactly (n-1) edges. <ul>
+<li>Any less than (n-1) edges, it can’t possibly be fully connected.</li>
+<li>Any more than (n-1) edges, it has to contain cycles.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>If a graph has far less edges, such that |E|&lt;&lt;|V|<sup>2</sup>, the graph is said to be “sparse”.</p>
+</li>
+<li><p>Corner cases for your graph algorithm to handle</p>
+<ul>
+<li>Empty graph</li>
+<li>Graph with one or two nodes</li>
+<li>Disconnected graphs</li>
+<li>Graph with cycles</li>
+</ul>
+</li>
+</ul>
+<h3 id="LeetCode-examples"><a href="#LeetCode-examples" class="headerlink" title="LeetCode examples"></a>LeetCode examples</h3><ul>
+<li><p>BFS and DFS</p>
+<ul>
+<li>LeetCode <a target="_blank" rel="noopener" href="https://leetcode.com/problems/clone-graph/description/">133. Clone Graph</a></li>
+<li>DFS <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for a Node.</span></span><br><span class="line"> <span class="keyword">class</span> <span class="title class_">Node</span>:</span><br><span class="line">     <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, val = <span class="number">0</span>, neighbors = <span class="literal">None</span></span>):</span><br><span class="line">         self.val = val</span><br><span class="line">         self.neighbors = neighbors <span class="keyword">if</span> neighbors <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span> <span class="keyword">else</span> []</span><br><span class="line"> <span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line"> <span class="comment"># Need to use a Hashmap to track the visited node.</span></span><br><span class="line">     <span class="keyword">def</span> <span class="title function_">cloneGraph</span>(<span class="params">self, node: <span class="string">&#x27;Node&#x27;</span></span>) -&gt; <span class="string">&#x27;Node&#x27;</span>:</span><br><span class="line">         <span class="comment"># memo is the HashMap that tracks the existing nodes</span></span><br><span class="line">         <span class="keyword">def</span> <span class="title function_">dfs</span>(<span class="params">node, memo</span>):</span><br><span class="line">             newNode = Node(node.val)</span><br><span class="line">             memo[node.val] = newNode</span><br><span class="line">             <span class="keyword">for</span> neigh <span class="keyword">in</span> node.neighbors:</span><br><span class="line">                 <span class="keyword">if</span> neigh.val <span class="keyword">in</span> memo:</span><br><span class="line">                     newNeigh = memo[neigh.val]</span><br><span class="line">                 <span class="keyword">else</span>:</span><br><span class="line">                     newNeigh = dfs(neigh, memo)</span><br><span class="line">                 newNode.neighbors.append(newNeigh)</span><br><span class="line">             <span class="keyword">return</span> newNode</span><br><span class="line">         <span class="keyword">if</span> node <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">             <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">         memo = &#123;&#125;</span><br><span class="line">         dfs(node, memo)</span><br><span class="line">         <span class="comment">#print(memo)</span></span><br><span class="line">     <span class="keyword">return</span> memo[<span class="number">1</span>]</span><br></pre></td></tr></table></figure></li>
+<li>BFS <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for a Node.</span></span><br><span class="line"> <span class="keyword">class</span> <span class="title class_">Node</span>:</span><br><span class="line">     <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, val = <span class="number">0</span>, neighbors = <span class="literal">None</span></span>):</span><br><span class="line">         self.val = val</span><br><span class="line">         self.neighbors = neighbors <span class="keyword">if</span> neighbors <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span> <span class="keyword">else</span> []</span><br><span class="line"> <span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">     <span class="keyword">def</span> <span class="title function_">cloneGraph</span>(<span class="params">self, node: <span class="string">&#x27;Node&#x27;</span></span>) -&gt; <span class="string">&#x27;Node&#x27;</span>:</span><br><span class="line">         <span class="keyword">if</span> node <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">             <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">         <span class="comment"># memo is the HashMap that tracks the existing nodes</span></span><br><span class="line">         queue, memo = deque([node]), &#123;node.val: Node(node.val)&#125;</span><br><span class="line">         <span class="keyword">while</span>(queue):</span><br><span class="line">             oldNode = queue.popleft()</span><br><span class="line">             newNode = memo[oldNode.val]</span><br><span class="line">             <span class="keyword">for</span> neigh <span class="keyword">in</span> oldNode.neighbors:</span><br><span class="line">                 <span class="keyword">if</span>(neigh.val <span class="keyword">not</span> <span class="keyword">in</span> memo):</span><br><span class="line">                     <span class="comment"># Create new node before adding oldNode into the queue, there&#x27;re also several other use cases of this pattern. </span></span><br><span class="line">                     newNeigh = Node(neigh.val)</span><br><span class="line">                     memo[neigh.val] = newNeigh</span><br><span class="line">                     queue.append(neigh)</span><br><span class="line">                 newNode.neighbors.append(memo[neigh.val])</span><br><span class="line">         <span class="comment">#print(memo)</span></span><br><span class="line">         <span class="keyword">return</span> memo[<span class="number">1</span>]</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>Topological Sort</p>
+<ul>
+<li>LeetCode <a target="_blank" rel="noopener" href="https://leetcode.com/problems/alien-dictionary/description/">269. Alien Dictionary</a><ul>
+<li><em>You are given a list of strings words from the alien language’s dictionary, where the strings in words are sorted lexicographically by the rules of this new language.</em> <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">alienOrder</span>(<span class="params">self, words: <span class="type">List</span>[<span class="built_in">str</span>]</span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    Input: words = [&quot;wrt&quot;,&quot;wrf&quot;,&quot;er&quot;,&quot;ett&quot;,&quot;rftt&quot;]</span></span><br><span class="line"><span class="string">    Output: &quot;wertf&quot;</span></span><br><span class="line"><span class="string">    It forms a directed graph</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="comment"># degree indicates the number of letter that are ahead for each one</span></span><br><span class="line">    adj, degree = collections.defaultdict(<span class="built_in">set</span>), &#123;&#125;</span><br><span class="line">    degree = &#123;ch:<span class="number">0</span> <span class="keyword">for</span> w <span class="keyword">in</span> words <span class="keyword">for</span> ch <span class="keyword">in</span> w&#125;</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">len</span>(words)):</span><br><span class="line">        minLen = <span class="built_in">min</span>(<span class="built_in">len</span>(words[i-<span class="number">1</span>]), <span class="built_in">len</span>(words[i]))</span><br><span class="line">        flag = <span class="built_in">len</span>(words[i-<span class="number">1</span>]) &gt; <span class="built_in">len</span>(words[i])</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(minLen):</span><br><span class="line">            preCh = words[i-<span class="number">1</span>][j]</span><br><span class="line">            curCh = words[i][j]</span><br><span class="line">            <span class="keyword">if</span>(preCh != curCh):</span><br><span class="line">                <span class="keyword">if</span>(curCh <span class="keyword">not</span> <span class="keyword">in</span> adj[preCh]):</span><br><span class="line">                    adj[preCh].add(curCh)</span><br><span class="line">                    degree[curCh] += <span class="number">1</span></span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            <span class="comment"># for a corner case</span></span><br><span class="line">            <span class="keyword">elif</span>(j == (minLen - <span class="number">1</span>) <span class="keyword">and</span> flag):</span><br><span class="line">                <span class="keyword">return</span> <span class="string">&quot;&quot;</span></span><br><span class="line">    <span class="comment">#print(degree)</span></span><br><span class="line">    <span class="comment"># put all letters who have 0 degree into the queue, and then run topological sort</span></span><br><span class="line">    queue = collections.deque([x <span class="keyword">for</span> (x,v) <span class="keyword">in</span> degree.items() <span class="keyword">if</span> v == <span class="number">0</span>])</span><br><span class="line">    res = []</span><br><span class="line">    <span class="keyword">while</span>(queue):</span><br><span class="line">        ch = queue.popleft()</span><br><span class="line">        res.append(ch)</span><br><span class="line">        neighbors = adj[ch]</span><br><span class="line">        <span class="keyword">for</span> nodeCh <span class="keyword">in</span> neighbors:</span><br><span class="line">            degree[nodeCh] -= <span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span>(degree[nodeCh] == <span class="number">0</span>):</span><br><span class="line">                queue.append(nodeCh)</span><br><span class="line">    <span class="built_in">print</span>(res)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;&quot;</span>.join(res) <span class="keyword">if</span> <span class="built_in">len</span>(res)==<span class="built_in">len</span>(degree) <span class="keyword">else</span> <span class="string">&quot;&quot;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Union Find</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.hackerearth.com/practice/notes/disjoint-set-union-union-find/">Disjoint Set Union (Union Find)</a> </li>
+<li>LeetCode <a target="_blank" rel="noopener" href="https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/description/">323. Number of Connected Components in an Undirected Graph</a><ul>
+<li><em>You have a graph of n nodes. You are given an integer n and an array edges where edges[i] &#x3D; [a<sub>i</sub>, b<sub>i</sub>] indicates that there is an edge between a<sub>i</sub> and b<sub>i</sub> in the graph. Return the number of connected components in the graph.</em> <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">countComponents</span>(<span class="params">self, n: <span class="built_in">int</span>, edges: <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">    parents = [i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n)]</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">findParents</span>(<span class="params">parents, node</span>):</span><br><span class="line">        <span class="keyword">while</span>(node != parents[node]):</span><br><span class="line">            node = parents[node]</span><br><span class="line">        <span class="keyword">return</span> node</span><br><span class="line">    nComponents = n</span><br><span class="line">    <span class="keyword">for</span> edge <span class="keyword">in</span> edges:</span><br><span class="line">        pA = findParents(parents, edge[<span class="number">0</span>])</span><br><span class="line">        pB = findParents(parents, edge[<span class="number">1</span>])</span><br><span class="line">        <span class="keyword">if</span>(pA != pB):</span><br><span class="line">            <span class="comment"># Note that it&#x27;s the roots of 2 nodes are connected, not the nodes themselves.</span></span><br><span class="line">            parents[pB] = pA</span><br><span class="line">            nComponents -= <span class="number">1</span></span><br><span class="line">    <span class="comment">#print(parents)</span></span><br><span class="line">    <span class="keyword">return</span> nComponents</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Dijkstra Algorithm</p>
+<ul>
+<li>LeetCode <a target="_blank" rel="noopener" href="https://leetcode.com/problems/cheapest-flights-within-k-stops/description/">787. Cheapest Flights Within K Stops</a><ul>
+<li><em>There are n cities connected by some number of flights. You are given an array flights where flights[i] &#x3D; [from<sub>i</sub>, to<sub>i</sub>, price<sub>i</sub>] indicates that there is a flight from city fromi to city toi with cost price<sub>i</sub>. You are also given three integers src, dst, and k, return the cheapest price from src to dst with at most k stops. If there is no such route, return -1.</em> <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">findCheapestPrice</span>(<span class="params">n: <span class="built_in">int</span>, flights: <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]], src: <span class="built_in">int</span>, dst: <span class="built_in">int</span>, k: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">     <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">     Input: n = 4, flights = [[0,1,100],[1,2,100],[2,0,100],[1,3,600],[2,3,200]], src = 0, dst = 3, k = 1</span></span><br><span class="line"><span class="string">     Output: 700</span></span><br><span class="line"><span class="string">     &quot;&quot;&quot;</span></span><br><span class="line">     minCost, adj = &#123;i:<span class="built_in">float</span>(<span class="string">&#x27;inf&#x27;</span>) <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n)&#125;, collections.defaultdict(<span class="built_in">list</span>)</span><br><span class="line">     <span class="keyword">for</span> flight <span class="keyword">in</span> flights:</span><br><span class="line">         adj[flight[<span class="number">0</span>]].append((flight[<span class="number">1</span>], flight[<span class="number">2</span>]))</span><br><span class="line">     queue, stop = collections.deque([(src,<span class="number">0</span>)]), <span class="number">0</span></span><br><span class="line">     <span class="keyword">while</span>(queue <span class="keyword">and</span> stop&lt;=k):</span><br><span class="line">         size = <span class="built_in">len</span>(queue)</span><br><span class="line">         <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(size):</span><br><span class="line">             (city,curCost) = queue.popleft()</span><br><span class="line">             neighbors = adj[city]</span><br><span class="line">             <span class="keyword">for</span> (neigh, price) <span class="keyword">in</span> neighbors:</span><br><span class="line">                 <span class="keyword">if</span>(curCost+price&lt;=minCost[neigh]):</span><br><span class="line">                     minCost[neigh] = curCost+price</span><br><span class="line">                     queue.append((neigh, minCost[neigh]))</span><br><span class="line">         stop += <span class="number">1</span></span><br><span class="line">         <span class="built_in">print</span>(minCost)</span><br><span class="line">     <span class="keyword">return</span> minCost[dst] <span class="keyword">if</span> minCost[dst] != <span class="built_in">float</span>(<span class="string">&#x27;inf&#x27;</span>) <span class="keyword">else</span> -<span class="number">1</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Euler’s algorithm to find a cycle</p>
+</li>
+</ul>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+                        <li>
+                            <a href="https://www.facebook.com/swang6891" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                        <li>
+                            <a href="https://www.instagram.com/senwang86" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/senwang86" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                        <li>
+                            <a href="https://www.linkedin.com/in/sen-wang-283aa437/" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2023 Sen Wang<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
