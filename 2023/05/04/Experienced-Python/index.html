@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="List Comprehension
+123m, n = 10, 10dp = [0]*n # 1d arraydp = [[False]*n for _ in range(m)] # 2d array, never use [[False]*n]*m, it is a trap! Because "/>
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Sen Wang"/>
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Experienced Python"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="List Comprehension
+123m, n = 10, 10dp = [0]*n # 1d arraydp = [[False]*n for _ in range(m)] # 2d array, never use [[False]*n]*m, it is a trap! Because "/>
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="The Walden"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article"/>
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="http://www.senwang.meimg/lake_tahoe_2023_unsplash.jpg"/>
+    
+
+        <meta name="twitter:card" content="summary_large_image"/>
+
+    
+
+    
+        <meta name="twitter:image" content="http://www.senwang.meimg/lake_tahoe_2023_unsplash.jpg"/>
+    
+
+    <!-- Title -->
+    
+    <title>Experienced Python - The Walden</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet"/>
+
+    <!-- Google Analytics -->
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'G-PN9Y5ELMMM', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+
+
+    <!-- favicon -->
+    
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">The Walden</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="https://github.com/senwang86">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/img/lake_tahoe_2023_unsplash.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Experienced Python</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2023-05-04
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/python/">#python</a>
+
+
+                    
+                </div>
+                <div class="col-lg-5 col-md-5 post-categories">
+                    
+                        
+
+<a href="/categories/Programming-Language/">Programming Language</a>
+
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
+                <ul>
+<li><p>List Comprehension</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">m, n = <span class="number">10</span>, <span class="number">10</span></span><br><span class="line">dp = [<span class="number">0</span>]*n <span class="comment"># 1d array</span></span><br><span class="line">dp = [[<span class="literal">False</span>]*n <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(m)] <span class="comment"># 2d array, never use [[False]*n]*m, it is a trap! Because * is copying the address of the object (list)</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Binary Search</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> bisect</span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">https://docs.python.org/3/library/bisect.html</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">bisect.bisect_left returns the leftmost place in the sorted list to insert the given element.</span></span><br><span class="line"><span class="string">bisect.bisect_right returns the rightmost place in the sorted list to insert the given element.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">They are equivalent when the the element to be inserted is not present in the list. Hence, they are not equivalent when the element to be inserted is in the list.</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line">nums = [-<span class="number">1</span>,<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># The element does not present in nums</span></span><br><span class="line">lIdx = bisect.bisect_left(nums, <span class="number">0</span>) <span class="comment"># return 1</span></span><br><span class="line">rIdx = bisect.bisect_right(nums, <span class="number">0</span>) <span class="comment"># return 1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># The element presents in nums</span></span><br><span class="line">lIdx = bisect.bisect_left(nums, <span class="number">1</span>) <span class="comment"># return 1</span></span><br><span class="line">rIdx = bisect.bisect_right(nums, <span class="number">1</span>) <span class="comment"># return 2</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Doubly Ended Queue</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">q = collections.dequeue([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]) <span class="comment"># initialize a Queue, e.g., tree level order traverse</span></span><br><span class="line">q.append() <span class="comment"># append at end</span></span><br><span class="line">q.appendleft() <span class="comment"># append at head</span></span><br><span class="line">q.pop() <span class="comment"># pop q[-1]</span></span><br><span class="line">q.popleft() <span class="comment"># pop q[0]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Priority Queue</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string"># https://docs.python.org/3/library/heapq.html</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line">h = []</span><br><span class="line">heapq.heapify(h) <span class="comment"># min-heap by default; mulitplying the input with &quot;-1&quot; to use as a max-heap</span></span><br><span class="line">heapq.heappush(h, <span class="number">5</span>)</span><br><span class="line">heapq.heappop(h)</span><br><span class="line">heapq.nlargest(<span class="number">3</span>, h)</span><br><span class="line">heapq.nsmallest(<span class="number">3</span>, h)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>LeetCode <a target="_blank" rel="noopener" href="https://leetcode.com/problems/top-k-frequent-elements/">347. Top K Frequent Elements</a>. <em>Given an integer array nums and an integer k, return the k most frequent elements. You may return the answer in any order.</em> <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">topKFrequent</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], k: <span class="built_in">int</span></span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">	<span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">	Input: nums = [1,1,1,2,2,3], k = 2</span></span><br><span class="line"><span class="string">	Output: [1,2]</span></span><br><span class="line"><span class="string">	&quot;&quot;&quot;</span></span><br><span class="line">    count = collections.Counter(nums)</span><br><span class="line">    <span class="comment"># note the usage of &quot;key&quot; parameter in nlargest()</span></span><br><span class="line">    <span class="keyword">return</span> heapq.nlargest(k, count.keys(), key=count.get)</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>misc</p>
+<ul>
+<li><p>chr() vs. ord(); ord() function returns an integer representing the Unicode character; chr() function returns the Unicode character with an integer as input</p>
+<ul>
+<li>LeetCode <a target="_blank" rel="noopener" href="https://leetcode.com/problems/group-anagrams/">49. Group Anagrams</a>. <em>Given an array of strings strs, group the anagrams together. You can return the answer in any order. An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.</em><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">groupAnagrams</span>(<span class="params">self, strs: <span class="type">List</span>[<span class="built_in">str</span>]</span>) -&gt; <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">str</span>]]:</span><br><span class="line">	<span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">	Input: strs = [&quot;eat&quot;,&quot;tea&quot;,&quot;tan&quot;,&quot;ate&quot;,&quot;nat&quot;,&quot;bat&quot;]</span></span><br><span class="line"><span class="string">	Output: [[&quot;bat&quot;],[&quot;nat&quot;,&quot;tan&quot;],[&quot;ate&quot;,&quot;eat&quot;,&quot;tea&quot;]]</span></span><br><span class="line"><span class="string">	&quot;&quot;&quot;</span></span><br><span class="line">    tmpMap = collections.defaultdict(<span class="built_in">list</span>)</span><br><span class="line">    <span class="keyword">for</span> s <span class="keyword">in</span> strs:</span><br><span class="line">        tmp = [<span class="number">0</span>]*<span class="number">26</span></span><br><span class="line">        <span class="keyword">for</span> char <span class="keyword">in</span> s:</span><br><span class="line">        	<span class="comment"># ord(&#x27;a&#x27;) returns the integer representation of &#x27;a&#x27;</span></span><br><span class="line">            tmp[<span class="built_in">ord</span>(char)-<span class="built_in">ord</span>(<span class="string">&#x27;a&#x27;</span>)] += <span class="number">1</span></span><br><span class="line">        tmpMap[<span class="built_in">tuple</span>(tmp)].append(s)</span><br><span class="line">        <span class="comment">#print(tuple(tmp))</span></span><br><span class="line">    <span class="keyword">return</span> [val <span class="keyword">for</span> val <span class="keyword">in</span> tmpMap.values()]</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>sort() and sorted()</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">nums = [[<span class="number">23</span>,<span class="number">1</span>],[<span class="number">4</span>,<span class="number">56</span>]]</span><br><span class="line">nums.sort(key=<span class="keyword">lambda</span> x:x[<span class="number">0</span>]) <span class="comment"># [[4, 56], [23, 1]], non-descending by default</span></span><br><span class="line">nums.sort(key=<span class="keyword">lambda</span> x:x[<span class="number">0</span>], reverse=<span class="literal">True</span>) <span class="comment"># [[23, 1], [4, 56]], non-ascending using &quot;reverse&quot;</span></span><br><span class="line"></span><br><span class="line">nums.sort(key=<span class="keyword">lambda</span> x:x[<span class="number">1</span>]) <span class="comment"># [[23, 1], [4, 56]]</span></span><br><span class="line">nums.sort(key=<span class="keyword">lambda</span> x:x[<span class="number">1</span>], reverse=<span class="literal">True</span>) <span class="comment"># [[4, 56], [23, 1]]</span></span><br><span class="line"></span><br><span class="line">newArray = <span class="built_in">sorted</span>(nums,key=<span class="keyword">lambda</span> x:x[<span class="number">0</span>],reverse=<span class="literal">True</span>) <span class="comment"># a deep copy of nums</span></span><br></pre></td></tr></table></figure></li>
+<li><p>*args and **kwargs<br><em>Need to fill in examples</em> </p>
+</li>
+<li><p>assert(), raise()</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">1</span></span><br><span class="line"><span class="keyword">assert</span> a&gt;<span class="number">100</span> <span class="comment"># False</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> a &gt; <span class="number">100</span>:</span><br><span class="line">	<span class="keyword">raise</span> Exception(<span class="string">&#x27;a cannot be higher than 100&#x27;</span>) <span class="comment"># raise standard exception</span></span><br><span class="line"></span><br><span class="line"> <span class="keyword">class</span> <span class="title class_">ScoreException</span>(<span class="title class_ inherited__">Exception</span>):</span><br><span class="line"> 	<span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line"> 		<span class="built_in">super</span>().__init__(<span class="string">&#x27;score cannot be higher than 100&#x27;</span>)</span><br><span class="line"></span><br><span class="line"> <span class="keyword">if</span> score &gt; <span class="number">100</span>:</span><br><span class="line"> 	<span class="keyword">raise</span> ScoreException() <span class="comment"># raise customized exception</span></span><br></pre></td></tr></table></figure></li>
+<li><p>f-string, [ref])(<a target="_blank" rel="noopener" href="https://ibexorigin.medium.com/have-mercy-on-yourself-and-learn-these-9-everyday-python-f-string-codes-e8104677d7c7">https://ibexorigin.medium.com/have-mercy-on-yourself-and-learn-these-9-everyday-python-f-string-codes-e8104677d7c7</a>)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># lambda functions</span></span><br><span class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> date</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;Today is <span class="subst">&#123;date.today()&#125;</span>&quot;</span>) <span class="comment"># Today is 2023-03-13</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;This is result from a lambda: <span class="subst">&#123;(<span class="keyword">lambda</span> x: x ** <span class="number">2</span>)(<span class="number">3</span>)&#125;</span>&quot;</span>) <span class="comment"># This is result from a lambda: 9</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># percentage formatting: &#123;:.n%&#125;</span></span><br><span class="line"></span><br><span class="line">jumbo_shrimp = <span class="number">0.4245</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;42% of something: <span class="subst">&#123;jumbo_shrimp:<span class="number">.0</span>%&#125;</span>&quot;</span>) <span class="comment"># 42% of something: 42%</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;Percentage of something: <span class="subst">&#123;jumbo_shrimp:<span class="number">.1</span>%&#125;</span>&quot;</span>) <span class="comment"># Percentage of something: 42.4%</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;Percentage of another thing: <span class="subst">&#123;jumbo_shrimp:<span class="number">.2</span>%&#125;</span>&quot;</span>) <span class="comment"># Percentage of another thing: 42.45%</span></span><br><span class="line">   </span><br><span class="line"></span><br><span class="line"><span class="comment"># printing the value of a variable: &#123;=&#125;</span></span><br><span class="line"></span><br><span class="line">sassy = <span class="number">1</span></span><br><span class="line">pants = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;sassy=&#125;</span>&quot;</span>) <span class="comment"># sassy=1</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;pants = &#125;</span>&quot;</span>) <span class="comment"># pants = 0</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>Classes</p>
+<ul>
+<li>init(), str() and gt(), <a target="_blank" rel="noopener" href="https://levelup.gitconnected.com/20-python-concepts-i-wish-i-knew-way-earlier-573cd189c183">ref1</a><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Panda</span>():</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, name, age</span>):</span><br><span class="line">        self.name = name</span><br><span class="line">        self.age = age</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__str__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> <span class="string">f&#x27;Panda(name=&quot;<span class="subst">&#123;self.name&#125;</span>&quot;, age=<span class="subst">&#123;self.age&#125;</span>)&#x27;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__gt__</span>(<span class="params">self, otherPanda</span>):</span><br><span class="line">        <span class="keyword">return</span> self.age &gt; otherPanda.age</span><br><span class="line"></span><br><span class="line">p1, p2 = Panda(<span class="string">&quot;Yuanyuan&quot;</span>, <span class="number">1</span>), Panda(<span class="string">&quot;Huanhuan&quot;</span>, <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(p1) <span class="comment"># Panda(name=&#x27;Yuanyuan&#x27;,age=1), which calls the __str__() function</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(p1&gt;p2) <span class="comment"># False, it compares 2 objects by the __gt__() function</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>principals</p>
+<ul>
+<li>Docstrings, <a target="_blank" rel="noopener" href="https://levelup.gitconnected.com/learn-how-to-write-python-clean-code-using-these-3-principles-ed046978e39a">ref1</a>, the first line of the docstring is a brief explanation of the function’s purpose. The next element of a docstring is an explanation of the function’s arguments.<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">population_density</span>(<span class="params">population, land_area</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Calculate the population density of an area.&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> population / land_area  </span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+                        <li>
+                            <a href="https://www.facebook.com/swang6891" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                        <li>
+                            <a href="https://www.instagram.com/senwang86" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/senwang86" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                        <li>
+                            <a href="https://www.linkedin.com/in/sen-wang-283aa437/" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2023 Sen Wang<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
