@@ -261,7 +261,7 @@
 <li>A bipartite follower graph is constructed with users on the left and Boards on the right</li>
 <li>The similarity graph nodes are Board nodes from the right bipartite partition.</li>
 <li>The weight between two Boards is determined based on the cosine similarity of associated user engagement vectors on the left partition.<ul>
-<li>Note that various engagement signals can be tuned to represent similarity, e.g., the explicit engagments(like, saving, sharing, etc) or a mix of explicit and implicit signals(click, views, etc)</li>
+<li>Note that various engagement signals can be tuned to represent similarity, e.g., the explicit engagments(like, repin, saving, commenting, hide, etc) or a mix of explicit and implicit signals(click, view, etc)</li>
 </ul>
 </li>
 <li>Edges with similarity scores below a certain threshold are discarded, and top-k most similar Board neighbors are kept instead.<ul>

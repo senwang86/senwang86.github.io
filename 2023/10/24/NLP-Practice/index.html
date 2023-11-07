@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="NLP PracticeDespite the fact that transformer-based LLM currently dominates many NLP tasks, classical NLP methodology still has practical benefits in "/>
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Sen Wang"/>
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="NLP Practice"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="NLP PracticeDespite the fact that transformer-based LLM currently dominates many NLP tasks, classical NLP methodology still has practical benefits in "/>
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="The Walden"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article"/>
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="http://www.senwang.meimg/lake_tahoe_2023_unsplash.jpg"/>
+    
+
+        <meta name="twitter:card" content="summary_large_image"/>
+
+    
+
+    
+        <meta name="twitter:image" content="http://www.senwang.meimg/lake_tahoe_2023_unsplash.jpg"/>
+    
+
+    <!-- Title -->
+    
+    <title>NLP Practice - The Walden</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet"/>
+
+    <!-- Google Analytics -->
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'G-PN9Y5ELMMM', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+
+
+    <!-- favicon -->
+    
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">The Walden</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="https://github.com/senwang86">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/img/lake_tahoe_2023_unsplash.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>NLP Practice</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2023-10-24
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+<a href="/categories/ML-Data-Processing/">ML Data Processing</a>
+
+                    
+                </div>
+                <div class="col-lg-5 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
+                <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="NLP-Practice"><a href="#NLP-Practice" class="headerlink" title="NLP Practice"></a>NLP Practice</h1><p>Despite the fact that transformer-based LLM currently dominates many NLP tasks, classical NLP methodology still has practical benefits in certain areas, such as lexical searches and word2vec embeddings. Rather than sending the entire text into the transformer-based model to keep semantic meaning, traditional NLP methods necessitate pre-processing to clean the dataset. The code snippets below are tested in the <a target="_blank" rel="noopener" href="https://colab.research.google.com/drive/1cIANpm5I2IZSXiUamJPvIbcqDRgEzVU3?usp=sharing">Colab notebook</a>.</p>
+<h3 id="Normalize-Text"><a href="#Normalize-Text" class="headerlink" title="Normalize Text"></a>Normalize Text</h3><p>For the text has words that follow certain capitalization like camel case, title case, sentence case, etc., or some mis-capitalized words (eg: pYthOn), it is advisable to normalize the text into <strong>lowercase</strong><sup id="fnref:2"><a href="#fn:2" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="[How to Perfectly Clean Your Text Data For NLP](https://heartbeat.comet.ml/how-to-perfectly-clean-your-text-data-for-nlp-29cfae79e243)">[2]</span></a></sup>.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">text = <span class="string">&#x27;Python PROGRAMMING LanGUage.&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(text.lower()) <span class="comment"># python programming language.</span></span><br></pre></td></tr></table></figure>
+
+
+<h3 id="Remove-Unnecessary-Whitespaces-2"><a href="#Remove-Unnecessary-Whitespaces-2" class="headerlink" title="Remove Unnecessary Whitespaces[2]"></a>Remove Unnecessary Whitespaces<sup id="fnref:2"><a href="#fn:2" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="[How to Perfectly Clean Your Text Data For NLP](https://heartbeat.comet.ml/how-to-perfectly-clean-your-text-data-for-nlp-29cfae79e243)">[2]</span></a></sup></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> regex <span class="keyword">as</span> re</span><br><span class="line">doc = <span class="string">&#x27;Multiple white    spaces in this    sentence       .     &#x27;</span></span><br><span class="line">res = re.sub(<span class="string">&quot;\s+&quot;</span>,<span class="string">&quot; &quot;</span>,doc) <span class="comment"># Multiple white spaces in this sentence .</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Remove-HTML-Tags-2"><a href="#Remove-HTML-Tags-2" class="headerlink" title="Remove HTML Tags[2]"></a>Remove HTML Tags<sup id="fnref:2"><a href="#fn:2" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="[How to Perfectly Clean Your Text Data For NLP](https://heartbeat.comet.ml/how-to-perfectly-clean-your-text-data-for-nlp-29cfae79e243)">[2]</span></a></sup></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> regex <span class="keyword">as</span> re</span><br><span class="line">doc = <span class="string">&#x27;&lt;document&gt;&lt;p&gt; Food is very good and &lt;b&gt;cheap&lt;/b&gt;.&lt;/p&gt;&lt;/document&gt;&#x27;</span></span><br><span class="line">res=re.sub(<span class="string">&#x27;&lt;.*?&gt;&#x27;</span>,<span class="string">&#x27;&#x27;</span>,doc)</span><br><span class="line"><span class="built_in">print</span>(res) <span class="comment"># Food is very good and cheap.</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Remove-Emails-2"><a href="#Remove-Emails-2" class="headerlink" title="Remove Emails[2]"></a>Remove Emails<sup id="fnref:2"><a href="#fn:2" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="[How to Perfectly Clean Your Text Data For NLP](https://heartbeat.comet.ml/how-to-perfectly-clean-your-text-data-for-nlp-29cfae79e243)">[2]</span></a></sup></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> regex <span class="keyword">as</span> re</span><br><span class="line">doc = <span class="string">&#x27;you can contact me on my emails abcsw46545677@gmail.com or abcsw46545677@qq.com for any queries.&#x27;</span></span><br><span class="line">res=re.sub(<span class="string">r&#x27;([a-z0-9+._-]+@[a-z0-9+._-]+\.[a-z0-9+_-]+)&#x27;</span>,<span class="string">&quot;&quot;</span>, doc)</span><br><span class="line"><span class="built_in">print</span>(res) <span class="comment"># you can contact me on my emails  or  for any queries.</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Remove-URLs"><a href="#Remove-URLs" class="headerlink" title="Remove URLs"></a>Remove URLs</h3><p>A generic URL may contain a protocol, subdomain, domain name, top level domain, and directory path, etc<sup id="fnref:2"><a href="#fn:2" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="[How to Perfectly Clean Your Text Data For NLP](https://heartbeat.comet.ml/how-to-perfectly-clean-your-text-data-for-nlp-29cfae79e243)">[2]</span></a></sup>.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> regex <span class="keyword">as</span> re</span><br><span class="line">doc = <span class="string">&#x27;follow my medium profile at https://test.com/@test12345 and subscribe to my email list at https://test.medium.com/subscribe&#x27;</span></span><br><span class="line">res=re.sub(<span class="string">r&#x27;(http|https|ftp|ssh)://([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&amp;:/~+#-]*[\w@?^=%&amp;/~+#-])?&#x27;</span>, <span class="string">&#x27;&#x27;</span> , doc)</span><br><span class="line"><span class="built_in">print</span>(res) <span class="comment"># follow my medium profile at  and subscribe to my email list at.</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Find-Hashtags-1"><a href="#Find-Hashtags-1" class="headerlink" title="Find Hashtags[1]"></a>Find Hashtags<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="[A Step-to-step Guide for Feature Engineering on Textual Data - NLP](https://techno-paji.medium.com/a-step-to-step-guide-for-feature-engineering-over-textual-data-nlp-a54c53081e04)">[1]</span></a></sup></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> regex <span class="keyword">as</span> re</span><br><span class="line">doc = <span class="string">&#x27;#funnyanimal #animal #goldenretriever&#x27;</span></span><br><span class="line">res=re.findall(<span class="string">r&#x27;#\w+&#x27;</span>, doc)</span><br><span class="line"><span class="built_in">print</span>(res) <span class="comment"># [&#x27;#funnyanimal&#x27;, &#x27;#animal&#x27;, &#x27;#goldenretriever&#x27;]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Find-Mentions-1"><a href="#Find-Mentions-1" class="headerlink" title="Find Mentions[1]"></a>Find Mentions<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="[A Step-to-step Guide for Feature Engineering on Textual Data - NLP](https://techno-paji.medium.com/a-step-to-step-guide-for-feature-engineering-over-textual-data-nlp-a54c53081e04)">[1]</span></a></sup></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> regex <span class="keyword">as</span> re</span><br><span class="line">doc = <span class="string">&#x27;thanks @test12 and @test34 for the sharing the testing result.&#x27;</span></span><br><span class="line">res=re.findall(<span class="string">r&#x27;@\w+&#x27;</span>, doc)</span><br><span class="line"><span class="built_in">print</span>(res) <span class="comment"># [&#x27;@test12&#x27;, &#x27;@test34&#x27;]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Find-Emoji-1"><a href="#Find-Emoji-1" class="headerlink" title="Find Emoji[1]"></a>Find Emoji<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="[A Step-to-step Guide for Feature Engineering on Textual Data - NLP](https://techno-paji.medium.com/a-step-to-step-guide-for-feature-engineering-over-textual-data-nlp-a54c53081e04)">[1]</span></a></sup></h3><p>Emojis can convey emotion and sentiment in a tweet, and can therefore be a useful feature.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># pip install emoji</span></span><br><span class="line"><span class="keyword">import</span> emoji</span><br><span class="line">doc = <span class="string">&quot;😊 Life&#x27;s journey is a rollercoaster 🎢 filled with ups and downs. 🌦️&quot;</span></span><br><span class="line">emojis = [emoji.emojize(word) <span class="keyword">for</span> word <span class="keyword">in</span> doc.split()]</span><br><span class="line">demojized_doc = emoji.demojize(doc)</span><br><span class="line">res=re.findall(<span class="string">r&#x27;:(.*?):&#x27;</span>, demojized_doc)</span><br><span class="line"><span class="built_in">print</span>(res) <span class="comment"># [&#x27;smiling_face_with_smiling_eyes&#x27;, &#x27;roller_coaster&#x27;, &#x27;sun_behind_rain_cloud&#x27;]</span></span><br><span class="line"><span class="built_in">print</span>([emoji.emojize(<span class="string">f&quot;:<span class="subst">&#123;word&#125;</span>:&quot;</span>) <span class="keyword">for</span> word <span class="keyword">in</span> res]) <span class="comment"># [&#x27;😊&#x27;, &#x27;🎢&#x27;, &#x27;🌦️&#x27;]</span></span><br></pre></td></tr></table></figure>
+
+
+<h3 id="Convert-Accented-Characters"><a href="#Convert-Accented-Characters" class="headerlink" title="Convert Accented Characters"></a>Convert Accented Characters</h3><p>Accent marks<sup id="fnref:2"><a href="#fn:2" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="[How to Perfectly Clean Your Text Data For NLP](https://heartbeat.comet.ml/how-to-perfectly-clean-your-text-data-for-nlp-29cfae79e243)">[2]</span></a></sup> are symbols used over letters especially vowels to emphasize the pronunciation of a word. These characters cause problems in analysis by increasing the vocabulary size unnecessarily.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> unicodedata</span><br><span class="line">doc = <span class="string">&#x27;résumé length is good. resume font is bad.&#x27;</span></span><br><span class="line">processed_doc=unicodedata.normalize(<span class="string">&#x27;NFKD&#x27;</span>, doc).encode(<span class="string">&#x27;ascii&#x27;</span>, <span class="string">&#x27;ignore&#x27;</span>).decode(<span class="string">&#x27;utf-8&#x27;</span>, <span class="string">&#x27;ignore&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(processed_doc) <span class="comment"># &quot;resume length is good. resume font is bad.&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Remove-Special-Symbols"><a href="#Remove-Special-Symbols" class="headerlink" title="Remove Special Symbols"></a>Remove Special Symbols</h3><p>Special symbols<sup id="fnref:2"><a href="#fn:2" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="[How to Perfectly Clean Your Text Data For NLP](https://heartbeat.comet.ml/how-to-perfectly-clean-your-text-data-for-nlp-29cfae79e243)">[2]</span></a></sup> are characters that are not considered either letters or digits. Different symbols, punctuation, and accent marks are considered special symbols.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> regex <span class="keyword">as</span> re</span><br><span class="line">doc = <span class="string">&#x27;Congrats!, David You have won $1,000.00.&#x27;</span></span><br><span class="line">processed_doc=re.sub(<span class="string">r&#x27;[^\w ]+&#x27;</span>, <span class="string">&quot;&quot;</span>, doc) </span><br><span class="line"><span class="built_in">print</span>(processed_doc) <span class="comment"># &quot;Congrats David You have won 100000&quot; # Note, it breaks the currency representation.</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Remove-Stopwords"><a href="#Remove-Stopwords" class="headerlink" title="Remove Stopwords"></a>Remove Stopwords</h3><p>Some of the most common stopwords are: the, is, for, when, to, at, etc<sup id="fnref:2"><a href="#fn:2" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="[How to Perfectly Clean Your Text Data For NLP](https://heartbeat.comet.ml/how-to-perfectly-clean-your-text-data-for-nlp-29cfae79e243)">[2]</span></a></sup>.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> nltk</span><br><span class="line">nltk.download(<span class="string">&#x27;stopwords&#x27;</span>)</span><br><span class="line"><span class="keyword">from</span> nltk.corpus <span class="keyword">import</span> stopwords</span><br><span class="line"></span><br><span class="line">doc = <span class="string">&#x27;this is one of the best action movie i have ever watched.&#x27;</span></span><br><span class="line">english_stopwords = <span class="built_in">set</span>(stopwords.words(<span class="string">&#x27;english&#x27;</span>))</span><br><span class="line">cleaned_doc = <span class="string">&#x27; &#x27;</span>.join([word <span class="keyword">for</span> word <span class="keyword">in</span> doc.split() <span class="keyword">if</span> word <span class="keyword">not</span> <span class="keyword">in</span> english_stopwords])</span><br><span class="line"><span class="built_in">print</span>(cleaned_doc) <span class="comment"># &quot;one best action movie ever watched.&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Stemming"><a href="#Stemming" class="headerlink" title="Stemming"></a>Stemming</h3><p>Stemming<sup id="fnref:2"><a href="#fn:2" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="[How to Perfectly Clean Your Text Data For NLP](https://heartbeat.comet.ml/how-to-perfectly-clean-your-text-data-for-nlp-29cfae79e243)">[2]</span></a></sup> is the process of converting a word to its root by removing suffix and prefix from it. This is often done to group together different forms of a word so they can be analyzed together as a single item. For example, Stemming will reduce ‘Learning’, ‘Learns’, and ‘Learned’, to their root word ‘Learn’.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> nltk</span><br><span class="line">nltk.download(<span class="string">&#x27;punkt&#x27;</span>)</span><br><span class="line"><span class="keyword">from</span> nltk.tokenize <span class="keyword">import</span> word_tokenize</span><br><span class="line"><span class="keyword">from</span> nltk.stem <span class="keyword">import</span> PorterStemmer</span><br><span class="line"></span><br><span class="line">ps = PorterStemmer()</span><br><span class="line">doc = <span class="string">&#x27;learning learn learned learns learnt&#x27;</span></span><br><span class="line">text = <span class="string">&quot; &quot;</span>.join([ps.stem(word) <span class="keyword">for</span> word <span class="keyword">in</span> word_tokenize(doc)])</span><br><span class="line"><span class="built_in">print</span>(text) <span class="comment"># &quot;learn learn learn learn learnt&quot; # Note, learnt is NOT stemmed to learn with the module.</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Lemmatization"><a href="#Lemmatization" class="headerlink" title="Lemmatization"></a>Lemmatization</h3><p>Lemmatization<sup id="fnref:2"><a href="#fn:2" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="[How to Perfectly Clean Your Text Data For NLP](https://heartbeat.comet.ml/how-to-perfectly-clean-your-text-data-for-nlp-29cfae79e243)">[2]</span></a></sup> is similar to stemming but the difference between the two is that it takes into consideration the morphological analysis of the words that allows us to differentiate between present, past, and indefinite tense.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> nltk</span><br><span class="line">nltk.download(<span class="string">&#x27;wordnet&#x27;</span>)</span><br><span class="line">nltk.download(<span class="string">&#x27;omw-1.4&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> nltk.stem <span class="keyword">import</span> WordNetLemmatizer</span><br><span class="line"></span><br><span class="line">doc = <span class="string">&#x27;history always repeat itself.&#x27;</span></span><br><span class="line">lemmatizer = WordNetLemmatizer()</span><br><span class="line">text = <span class="string">&quot; &quot;</span>.join([lemmatizer.lemmatize(word) <span class="keyword">for</span> word <span class="keyword">in</span> word_tokenize(doc)])</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Lemmatization: &#x27;</span>,text) <span class="comment"># &quot;Lemmatization:  history always repeat itself.&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Tokenization"><a href="#Tokenization" class="headerlink" title="Tokenization"></a>Tokenization</h3><p>Tokenization<sup id="fnref:3"><a href="#fn:3" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="[Every Beginner NLP Engineer Must Know These Techniques](https://ankushmulkar.medium.com/every-beginner-nlp-engineer-must-know-these-techniques-678605dc6026)">[3]</span></a></sup> is the process of breaking a stream of text up into words, phrases, symbols, or other meaningful elements, known as tokens.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> nltk</span><br><span class="line">nltk.download(<span class="string">&#x27;punkt&#x27;</span>)</span><br><span class="line">tokenizer = nltk.data.load(<span class="string">&#x27;tokenizers/punkt/english.pickle&#x27;</span>)</span><br><span class="line"><span class="keyword">from</span> nltk.tokenize <span class="keyword">import</span> word_tokenize</span><br><span class="line"></span><br><span class="line">text = <span class="string">&quot;This is an example of tokenization.&quot;</span></span><br><span class="line">tokens = word_tokenize(text)</span><br><span class="line"><span class="built_in">print</span>(tokens) <span class="comment"># [&#x27;This&#x27;, &#x27;is&#x27;, &#x27;an&#x27;, &#x27;example&#x27;, &#x27;of&#x27;, &#x27;tokenization&#x27;, &#x27;.&#x27;]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Sentiment-Analysis"><a href="#Sentiment-Analysis" class="headerlink" title="Sentiment Analysis"></a>Sentiment Analysis</h3><p>Sentiment Analysis<sup id="fnref:3"><a href="#fn:3" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="[Every Beginner NLP Engineer Must Know These Techniques](https://ankushmulkar.medium.com/every-beginner-nlp-engineer-must-know-these-techniques-678605dc6026)">[3]</span></a></sup> is the process of determining the emotional tone behind a piece of text, whether it is positive, negative, or neutral.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> nltk</span><br><span class="line">nltk.download(<span class="string">&#x27;vader_lexicon&#x27;</span>)</span><br><span class="line"><span class="keyword">from</span> nltk.sentiment <span class="keyword">import</span> SentimentIntensityAnalyzer</span><br><span class="line">text = <span class="string">&quot;I love this product! It&#x27;s amazing.&quot;</span></span><br><span class="line">sia = SentimentIntensityAnalyzer()</span><br><span class="line">score = sia.polarity_scores(text)</span><br><span class="line"><span class="built_in">print</span>(score) <span class="comment"># &#123;&#x27;neg&#x27;: 0.0, &#x27;neu&#x27;: 0.266, &#x27;pos&#x27;: 0.734, &#x27;compound&#x27;: 0.6369&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Part-of-Speech-Tagging"><a href="#Part-of-Speech-Tagging" class="headerlink" title="Part-of-Speech Tagging"></a>Part-of-Speech Tagging</h3><p>Part-of-speech (POS) tags can provide information about the structure and function of the words in a given text trunk; tagging<sup id="fnref:3"><a href="#fn:3" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="[Every Beginner NLP Engineer Must Know These Techniques](https://ankushmulkar.medium.com/every-beginner-nlp-engineer-must-know-these-techniques-678605dc6026)">[3]</span></a></sup> is the process of marking each word in a text with its corresponding POS tag.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> nltk</span><br><span class="line">nltk.download(<span class="string">&#x27;averaged_perceptron_tagger&#x27;</span>)</span><br><span class="line"><span class="keyword">from</span> nltk <span class="keyword">import</span> pos_tag</span><br><span class="line"><span class="keyword">from</span> nltk.tokenize <span class="keyword">import</span> word_tokenize</span><br><span class="line">text = <span class="string">&quot;I am learning NLP techniques in Python.&quot;</span></span><br><span class="line">tokens = word_tokenize(text)</span><br><span class="line">pos_tags = pos_tag(tokens)</span><br><span class="line"><span class="built_in">print</span>(pos_tags) <span class="comment"># [(&#x27;I&#x27;, &#x27;PRP&#x27;), (&#x27;am&#x27;, &#x27;VBP&#x27;), (&#x27;learning&#x27;, &#x27;VBG&#x27;), (&#x27;NLP&#x27;, &#x27;NNP&#x27;), (&#x27;techniques&#x27;, &#x27;NNS&#x27;), (&#x27;in&#x27;, &#x27;IN&#x27;), (&#x27;Python&#x27;, &#x27;NNP&#x27;), (&#x27;.&#x27;, &#x27;.&#x27;)]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Name-Entity-Recognition"><a href="#Name-Entity-Recognition" class="headerlink" title="Name Entity Recognition"></a>Name Entity Recognition</h3><p>Named Entity Recognition (NER)<sup id="fnref:3"><a href="#fn:3" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="[Every Beginner NLP Engineer Must Know These Techniques](https://ankushmulkar.medium.com/every-beginner-nlp-engineer-must-know-these-techniques-678605dc6026)">[3]</span></a></sup> is the process of identifying and classifying named entities in a text into predefined categories such as person names, organizations, locations, medical codes, time expressions, quantities, monetary values, percentages, etc.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> nltk</span><br><span class="line">nltk.download(<span class="string">&#x27;maxent_ne_chunker&#x27;</span>)</span><br><span class="line">nltk.download(<span class="string">&#x27;words&#x27;</span>)</span><br><span class="line"><span class="keyword">from</span> nltk <span class="keyword">import</span> ne_chunk, pos_tag</span><br><span class="line"><span class="keyword">from</span> nltk.tokenize <span class="keyword">import</span> word_tokenize</span><br><span class="line">text = <span class="string">&quot;Barack Obama was born in Hawaii.&quot;</span></span><br><span class="line">tokens = word_tokenize(text)</span><br><span class="line">tagged_tokens = pos_tag(tokens)</span><br><span class="line">ner_tree = ne_chunk(tagged_tokens)</span><br><span class="line"><span class="built_in">print</span>(ner_tree)</span><br><span class="line">----------------------------------------------------</span><br><span class="line">(S</span><br><span class="line">  (PERSON Barack/NNP)</span><br><span class="line">  (PERSON Obama/NNP)</span><br><span class="line">  was/VBD</span><br><span class="line">  born/VBN</span><br><span class="line">  <span class="keyword">in</span>/IN</span><br><span class="line">  (GPE Hawaii/NNP)</span><br><span class="line">  ./.)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Word-Embedding"><a href="#Word-Embedding" class="headerlink" title="Word Embedding"></a>Word Embedding</h3><ul>
+<li><p>Word2Vec embeddings<sup id="fnref:3"><a href="#fn:3" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="[Every Beginner NLP Engineer Must Know These Techniques](https://ankushmulkar.medium.com/every-beginner-nlp-engineer-must-know-these-techniques-678605dc6026)">[3]</span></a></sup></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> gensim.models <span class="keyword">import</span> Word2Vec</span><br><span class="line"><span class="comment"># Define a dataset</span></span><br><span class="line">sentences = [[<span class="string">&#x27;This&#x27;</span>, <span class="string">&#x27;is&#x27;</span>, <span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;positive&#x27;</span>, <span class="string">&#x27;text&#x27;</span>],</span><br><span class="line">            [<span class="string">&#x27;This&#x27;</span>, <span class="string">&#x27;is&#x27;</span>, <span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;negative&#x27;</span>, <span class="string">&#x27;text&#x27;</span>],</span><br><span class="line">            [<span class="string">&#x27;This&#x27;</span>, <span class="string">&#x27;is&#x27;</span>, <span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;neutral&#x27;</span>, <span class="string">&#x27;text&#x27;</span>]]</span><br><span class="line"><span class="comment"># Train the model</span></span><br><span class="line">model = Word2Vec(sentences, vector_size=<span class="number">100</span>, window=<span class="number">5</span>, min_count=<span class="number">1</span>, workers=<span class="number">4</span>)</span><br><span class="line"><span class="comment"># Access the trained model&#x27;s word vector</span></span><br><span class="line">word_vector = model.wv[<span class="string">&#x27;positive&#x27;</span>]</span><br><span class="line"><span class="built_in">print</span>(word_vector) <span class="comment"># array([8.13227147e-03 -4.45733406e-03 -1.06835726e-03, ...], dtype=float32)</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>GloVe embeddings<sup id="fnref:3"><a href="#fn:3" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="[Every Beginner NLP Engineer Must Know These Techniques](https://ankushmulkar.medium.com/every-beginner-nlp-engineer-must-know-these-techniques-678605dc6026)">[3]</span></a></sup></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> gensim.models <span class="keyword">import</span> KeyedVectors</span><br><span class="line"><span class="comment"># Load the pre-trained GloVe model, e.g., 100d embeddings</span></span><br><span class="line">model = KeyedVectors.load_word2vec_format(<span class="string">&#x27;path/to/glove.6B.100d.txt&#x27;</span>, binary=<span class="literal">False</span>)</span><br><span class="line"><span class="comment"># Access the word vector</span></span><br><span class="line">word_vector = model[<span class="string">&#x27;word&#x27;</span>]</span><br><span class="line"><span class="built_in">print</span>(word_vector)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"><a target="_blank" rel="noopener" href="https://techno-paji.medium.com/a-step-to-step-guide-for-feature-engineering-over-textual-data-nlp-a54c53081e04">A Step-to-step Guide for Feature Engineering on Textual Data - NLP</a><a href="#fnref:1" rev="footnote"> ↩</a></span></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">2.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"><a target="_blank" rel="noopener" href="https://heartbeat.comet.ml/how-to-perfectly-clean-your-text-data-for-nlp-29cfae79e243">How to Perfectly Clean Your Text Data For NLP</a><a href="#fnref:2" rev="footnote"> ↩</a></span></li><li id="fn:3"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">3.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"><a target="_blank" rel="noopener" href="https://ankushmulkar.medium.com/every-beginner-nlp-engineer-must-know-these-techniques-678605dc6026">Every Beginner NLP Engineer Must Know These Techniques</a><a href="#fnref:3" rev="footnote"> ↩</a></span></li><li id="fn:4"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">4.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"><a target="_blank" rel="noopener" href="https://betterprogramming.pub/2d-tokenization-for-large-language-models-46b295dd1904">2D Tokenization for Large Language Models</a><a href="#fnref:4" rev="footnote"> ↩</a></span></li></ol></div></div>
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+                        <li>
+                            <a href="https://www.facebook.com/swang6891" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                        <li>
+                            <a href="https://www.instagram.com/senwang86" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/senwang86" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                        <li>
+                            <a href="https://www.linkedin.com/in/sen-wang-283aa437/" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2023 Sen Wang<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
